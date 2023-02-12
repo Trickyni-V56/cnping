@@ -456,7 +456,7 @@ void DrawFrame( void )
 		}
 		else if (st != 0) // ping sent but not received
 		{
-			CNFGColor( 0xff0000ff );
+			CNFGColor( 0xf5abb9ff );
 			dt = now - st;
 			dt *= 1000;
 			if( i > 5 ) totalcountloss++; //Get a freebie on the first 5.
@@ -663,7 +663,7 @@ int main( int argc, const char ** argv )
 		pattern[i] = rand();
 	}
 	#endif
-	CNFGBGColor = 0x000080ff;
+	CNFGBGColor = 0x5bcffaff;
 #ifdef WIN32
 	if( argc < 2 )
 	{
@@ -812,7 +812,7 @@ int main( int argc, const char ** argv )
 		}
 
 		CNFGPenX = 100; CNFGPenY = 100;
-		CNFGColor( 0xff0000ff );
+		CNFGColor( 0xf5abb9ff );
 		CNFGDrawText( errbuffer, 3 );
 
 
