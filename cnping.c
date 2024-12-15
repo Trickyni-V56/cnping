@@ -273,13 +273,13 @@ double GetWindMaxPingTime( void )
 void DrawMainText( const char * stbuf )
 {
 	int x, y;
-	CNFGColor( 0x000000ff );
+	CNFGColor( 0xAFD2E9ff );
 	for( x = -1; x < 2; x++ ) for( y = -1; y < 2; y++ )
 	{
 		CNFGPenX = 10+x; CNFGPenY = 10+y;
 		CNFGDrawText( stbuf, 2 );
 	}
-	CNFGColor( 0xffffffff );
+	CNFGColor( 0x3b3228ff );
 	CNFGPenX = 10; CNFGPenY = 10;
 	CNFGDrawText( stbuf, 2 );
 }
@@ -347,7 +347,7 @@ void DrawFrameHistogram()
 
 		for( i = 0; i < rslots; i++ )
 		{
-			CNFGColor( 0x33cc33ff );
+			CNFGColor( 0xace1afff );
 			int top = 30;
 			uint64_t samps = samples[i];
 			int bottom = screeny - 50;
@@ -358,11 +358,11 @@ void DrawFrameHistogram()
 			if( !in_frame_mode )
 			{
 				CNFGTackRectangle( startx, bottom-height, endx, bottom + 1 );
-				CNFGColor( 0x000000ff );
+				CNFGColor( 0x3B3228ff );
 			}
 			else
 			{
-				CNFGColor( 0x8080ffff );
+				CNFGColor( 0xf8e2a0ff );
 			}
 			CNFGTackSegment( startx, bottom+1, endx, bottom+1 );
 
@@ -381,11 +381,11 @@ void DrawFrameHistogram()
 
 			if( !in_frame_mode )
 			{
-				CNFGColor( 0xffffffff );
+				CNFGColor( 0xAFD2E9ff );
 			}
 			else
 			{
-				CNFGColor( 0x8080ffff );
+				CNFGColor( 0x3ECCBEff );
 			}
 
 
@@ -444,7 +444,7 @@ void DrawFrame( void )
 
 		if( rt > st ) // ping received
 		{
-			CNFGColor( 0xffffffff );
+			CNFGColor( 0xAFD2E9ff );
 			dt = rt - st;
 			dt *= 1000;
 			totaltime += dt;
@@ -456,14 +456,14 @@ void DrawFrame( void )
 		}
 		else if (st != 0) // ping sent but not received
 		{
-			CNFGColor( 0xff0000ff );
+			CNFGColor( 0xE86045ff );
 			dt = now - st;
 			dt *= 1000;
 			if( i > 5 ) totalcountloss++; //Get a freebie on the first 5.
 		}
 		else // no ping sent for this point in time (after startup)
 		{
-			CNFGColor( 0x000000ff );
+			CNFGColor( 0xAFD2E9ff );
 			dt = 99 * 1000; // assume 99s to fill screen black
 		}
 
@@ -503,7 +503,7 @@ void DrawFrame( void )
 	int avg_gui    = avg*GuiYScaleFactor;
 	int stddev_gui = stddev*GuiYScaleFactor;
 
-	CNFGColor( 0x00ff00ff );
+	CNFGColor( 0xACE1AFff );
 
 
 	int l = avg_gui;
@@ -798,7 +798,7 @@ int main( int argc, const char ** argv )
 		CNFGHandleInput();
 
 		CNFGClearFrame();
-		CNFGColor( 0xffffffff );
+		CNFGColor( 0xAFD2E9ff );
 		CNFGGetDimensions( &screenx, &screeny );
 
 		if( in_frame_mode )
@@ -812,7 +812,7 @@ int main( int argc, const char ** argv )
 		}
 
 		CNFGPenX = 100; CNFGPenY = 100;
-		CNFGColor( 0xff0000ff );
+		CNFGColor( 0xE86045ff );
 		CNFGDrawText( errbuffer, 3 );
 
 
